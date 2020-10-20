@@ -14,23 +14,23 @@ console.log(user.weight); // undefined
 
 /** look object's key **/
 user = {
-	name: 'joanna',
+	userName: 'joanna',
 	age: 68
 };
 
-console.log('name' in user); // true
+console.log('userName' in user); // true
 
 //
 for(let key in user)
 	console.log(`${key}: ${user[key]}`);
 /*
-name: joanna
+userName: joanna
 age: 68
 */
 
-console.log(Object.keys(user));    // [ 'name', 'age' ]
+console.log(Object.keys(user));    // [ 'userName', 'age' ]
 console.log(Object.values(user));  // [ 'joanna', 68 ]
-console.log(Object.entries(user)); // [ [ 'name', 'joanna' ], [ 'age', 68 ] ]
+console.log(Object.entries(user)); // [ [ 'userName', 'joanna' ], [ 'age', 68 ] ]
 
 
 /** function property **/
@@ -63,7 +63,7 @@ user.address = null;
 console.log(user?.address?.street); // undefined
 
 //?. 는 = 왼쪽에 사용할 수 없다.
-//user1?.name = 'violet'; // SyntaxError: Invalid left-hand side in assignment
+//user1?.userName = 'violet'; // SyntaxError: Invalid left-hand side in assignment
 
 
 /** short circuit **/
@@ -101,3 +101,4 @@ console.log(user1?.[key]); // viloet
 console.log(user2?.[key]); // undefined
 
 delete user1?.userName;
+console.log(user1); // {}
