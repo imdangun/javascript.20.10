@@ -31,8 +31,3 @@ let waiter = function(food, shef) {
 console.log(waiter('jajangmyeon', shef1), // sweet jajangmyeon
 		    waiter('jajangmyeon', shef2), // hot jajangmyeon
 		    waiter('champon', shef2));    // hot champon
-
-
-/* 과제2:
-과제1 을 callback 형태로 refactoring 하세요.
-*/

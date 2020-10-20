@@ -6,13 +6,14 @@ let makeUser = function(userName, age) {
 	};
 }
 
-makeUser = function(userName, age) {
+makeUser = function(userName, age, ...jobs) {
 	return {
 		userName,
 		age
 	}
 };
 
+//
 console.log(makeUser('doris', 57)); // { userName: 'doris', age: 57 }
 console.log(makeUser('lincoln', 27)); // { userName: 'lincoln', age: 27 }
 

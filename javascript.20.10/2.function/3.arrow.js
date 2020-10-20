@@ -27,9 +27,3 @@ let sum = (a, b) => {
 }
 
 console.log(sum(1, 2)); // 3
-
-
-/*
-과제4:
-2.callback.js 의 짜장면 이야기를 arrow function 으로 refactoring 하세요.
-*/

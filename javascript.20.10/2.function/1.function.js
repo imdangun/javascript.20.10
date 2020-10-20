@@ -90,12 +90,3 @@ let tellHi = function fn(who) {
 tellHi();       // Hi, Guest.
 tellHi('abel'); // Hi, abel.
 // fn(); // ReferenceError: fn is not defined
-
-
-/* 과제1: 
-다음 조건을 가진 산술 연산 function 을 만드세요.
-
-- 파라미터(피연산자1, 피연산자2, 연산종류) 를 받는다.
-- 연산종류에 맞는 계산 결과를 return 한다.
-- 호출자가 연산종류를 명시하지 않으면 더하기를 한다.
-*/
