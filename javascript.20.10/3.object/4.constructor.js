@@ -1,28 +1,28 @@
 /** factory fuction **/
-let makeUser = function(name, age) {
+let makeUser = function(userName, age) {
 	return {
-		name: name,
+		userName: userName,
 		age: age,
 	};
 }
 
-makeUser = function(name, age) {
+makeUser = function(userName, age) {
 	return {
-		name,
+		userName,
 		age
 	}
 };
 
-console.log(makeUser('doris', 57)); // { name: 'doris', age: 57 }
-console.log(makeUser('lincoln', 27)); // { name: 'lincoln', age: 27 }
+console.log(makeUser('doris', 57)); // { userName: 'doris', age: 57 }
+console.log(makeUser('lincoln', 27)); // { userName: 'lincoln', age: 27 }
 
 
 /** constructor **/
-function User(name) {
+function User(userName) {
 	// this = {};
-	this.name = name;
+	this.userName = userName;
 	this.greet = function() {
-		console.log(`I am ${this.name}.`);
+		console.log(`I am ${this.userName}.`);
 	};
 	// return this;
 }
@@ -41,54 +41,47 @@ console.log(typeof str); // object
 
 //
 let human = new function() {
-	this.name = 'meg';
+	this.humanName = 'meg';
 	this.age = 27;
 };
 
 //
 function BigUser() {
-	this.name = 'amy';
-	return {name: 'beth'};
+	this.userName = 'amy';
+	return {userName: 'beth'};
 }
 
 function SmallUser() {
-	this.name = 'lorie';
-	return;
+	this.userName = 'lorie';
 }
 
-console.log(new BigUser());   // { name: 'beth' }
-console.log(new SmallUser()); // SmallUser { name: 'lorie' }
+console.log(new BigUser());   // { userName: 'beth' }
+console.log(new SmallUser()); // SmallUser { userName: 'lorie' }
 
 //
-console.log(new SmallUser); // SmallUser { name: 'lorie' }
 console.log(SmallUser);     // [Function: SmallUser]
 console.log(SmallUser());   // undefined
+console.log(BigUser());     { userName: 'beth' }
 
 
 /** Object() **/
 const user = new Object();
 
-user.name = 'chris';
+user.userName = 'chris';
 user['age'] = 38;
 user.greet = function() {
-	console.log(`I am ${this.name}.`); // I am chris.
+	console.log(`I am ${this.userName}.`); // I am chris.
 };
 
-console.log(user); // { name: 'chris', age: 38, greet: [Function] }
+console.log(user); // { userName: 'chris', age: 38, greet: [Function] }
 user.greet();
 
 
 /** view object **/
 const person = Object.create(user);
 console.log(person);          // {}
-console.log(person.name);     // chris
-console.log(person === user); // false
+console.log(person.userName); // chris
+console.log(person == user);  // false
 
 person.height = 200;
 console.log(Object.keys(person)); // [ 'height' ]
-
-
-/* 과제4:
-/ch02/home/3.jajangmyeon.js 의 짜장면 이야기를
- 객체지향으로 refactoring 하세요.
-*/
