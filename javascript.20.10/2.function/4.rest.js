@@ -16,7 +16,7 @@ function sumAll(...args) {
 console.log(sumAll(1), sumAll(1, 2, 3)); // 1 6
 
 
-//
+// ... 는 마지막 파라미터여야 한다.
 function printName(firstName, lastName, ...titles) {
 	console.log(firstName, lastName);             // adam smith
 	console.log(titles[0], titles[1], titles[2]); // operator consul undefined
