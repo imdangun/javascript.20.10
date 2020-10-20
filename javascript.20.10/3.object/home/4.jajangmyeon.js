@@ -3,23 +3,17 @@
  객체지향으로 refactoring 하세요.
 */
 
-let shef1 = {
-	cook(foodName) {
+function Shef(taste) {
+	this.cook = function(foodName) {
 		return {
 			foodName,
-			taste: 'sweet'			
+			taste
 		};
 	}
-};
+}
 
-let shef2 = {
-	cook(foodName) {
-		return {
-			foodName,
-			taste: 'hot'
-		};
-	}
-};
+shef1 = new Shef('sweet');
+shef2 = new Shef('hot');
 
 let waiter = {
 	order(foodName, shef) {

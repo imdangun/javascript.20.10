@@ -2,14 +2,19 @@ let id1 = Symbol('id');
 let id2 = Symbol('id');
 
 console.log(id1 == id2);      // false
+
 console.log(id1);             // Symbol(id)
 console.log(id1.toString());  // Symbol(id)
+
+console.log(typeof id1);            // symbol
+console.log(typeof id1.toString()); // string
+
 console.log(id1.description); // id
 
 
 /** hidden property **/
 let user = {
-	name: 'neo'
+	userName: 'neo'
 };
 
 let id = Symbol('id');
@@ -19,7 +24,7 @@ console.log(user.id);  // undefined
 console.log(user[id]); // 1
 
 user = {
-	name: 'morpheus',
+	userName: 'morpheus',
 	age: 52,
 	[id]:2
 }
@@ -30,8 +35,8 @@ console.log(user[id]); // 2
 for(let key in user)
 	console.log(key);
 /*
-name
+userName
 age
 */
 
-console.log(Object.keys(user)); // [ 'name', 'age' ]
+console.log(Object.keys(user)); // [ 'userName', 'age' ]
