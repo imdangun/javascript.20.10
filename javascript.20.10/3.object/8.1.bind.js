@@ -7,6 +7,7 @@ let user = {
 
 user.greet(); // I am madonna.
 
+// user 가 아닌 greet 함수를 등록했다.
 setTimeout(user.greet, 100); // I am undefined.
 
 let fn = user.greet;

@@ -27,7 +27,3 @@ let user = {
 let greetFn = user.greet.bind(user);
 
 setTimeout(greetFn, 1000); // I am john.
-
-user.greet = function() {
-	console.log('hello');
-}
