@@ -1,26 +1,24 @@
-let name = 'lincoln';
-
-let man = {
-	name: 'leo'
+let user = {
+	userName: 'leo'
 };
 
 function greet() {
-	console.log(`I am ${this.name}.`);
+	console.log(`I am ${this.userName}.`);
 }
 
 greet(); // I am undefined.
 
-let fn = greet.bind(man);
+let fn = greet.bind(user);
 fn(); // I am leo.
 
 setTimeout(fn, 500); // I am leo.
 
 
 //
-let user = {
-	name: 'john',
+user = {
+	userName: 'john',
 	greet() {
-		console.log(`I am ${this.name}.`);
+		console.log(`I am ${this.userName}.`);
 	}
 }
 

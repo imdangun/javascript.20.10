@@ -1,14 +1,14 @@
 let user1 = {
-	name: 'isabel',
+	userName: 'isabel',
 	greet() {
-		console.log(`I am ${this.name}.`);
+		console.log(`I am ${this.userName}.`);
 	}
 };
 
 let user2 = {
-	name: 'jade',
+	userName: 'jade',
 	greet() {
-		console.log(`I am ${this.name}.`);
+		console.log(`I am ${this.userName}.`);
 	}
 };
 
@@ -17,14 +17,14 @@ user2.greet(); // I am jade.
 
 
 //
-let name = 'morpheus';
+let userName = 'morpheus';
 
 function greet() {
-	console.log(`I am ${this.name}.`);
+	console.log(`I am ${this.userName}.`);
 }
 
-user1 = {name: 'neo'};
-user2 = {name: 'trinity'};
+user1 = {userName: 'neo'};
+user2 = {userName: 'trinity'};
 
 greet(); // I am undefined.
 greet.call(user1); // I am neo.
@@ -33,14 +33,14 @@ greet.call(user2); // I am trinity.
 
 //
 user1 = {
-	name: 'rebecca',
+	userName: 'rebecca',
 	greet() {
-		console.log(`I am ${this.name}.`);
+		console.log(`I am ${this.userName}.`);
 	}
 };
 
 user2 = {
-	name: 'colin'
+	userName: 'colin'
 };
 
 user1.greet(); // I am rebecca.

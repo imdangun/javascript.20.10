@@ -1,18 +1,19 @@
 let animal = {
-	name: 'animal'
+	animalName: 'animal'
 };
 
 let rabbit = {
 	age : 3
 };
 
-// [[Prototype]]
-console.log(animal.__proto__); // {}
-console.log(rabbit.__proto__); // {}
+//객체에는 [[Prototype]] 이라는 숨김 property 가 있다.
+//__proto__ 는 [[Prototype]] 의 getter, setter 이다.
+console.log(animal.__proto__); // [Object: null prototype] {}
+console.log(rabbit.__proto__); // [Object: null prototype] {}
 
 rabbit.__proto__ = animal;
-console.log(rabbit.__proto__); // { name: 'animal' }
-console.log(rabbit.name, rabbit.age); // animal 3
+console.log(rabbit.__proto__); // { animalName: 'animal' }
+console.log(rabbit.animalName, rabbit.age); // animal 3
 
 //
 animal = {
@@ -32,16 +33,16 @@ rabbit.walk = function() {
 };
 rabbit.walk(); // rabbit walk.
 
-//
+// 
 let user = {
-	_name: 'user',
+	_userName: 'user',
 	
-	get name() {
-		return this._name;
+	get userName() {
+		return this._userName + '(get)';
 	},
 	
-	set name(name) {
-		this._name = name;
+	set userName(userName) {
+		this._userName = userName + '(set)';
 	}
 }
 
@@ -49,9 +50,12 @@ let admin = {
 	__proto__: user
 };
 
-console.log(admin.name); // user
+console.log(admin.userName); // user(get)
+admin.userName = 'abel';
+console.log(admin.userName); // abel(set)(get)
 
-//
+
+// this 엔 . 앞의 객체가 할당된다.
 animal = {
 	name: 'animal',
 	weight: 50,
@@ -62,16 +66,11 @@ animal = {
 
 rabbit = {
 	name: 'rabbit',
-	eat() {
-		console.log(`${this.name} eat.`);
-	}
+	__proto__: animal
 };
 
 let lion = {
 	name: 'lion',
-	eat() {
-		console.log(`${this.name} eat.`);
-	},
 	__proto__: animal
 };
 
@@ -79,26 +78,18 @@ animal.eat(); // animal eat.
 rabbit.eat(); // rabbit eat.
 lion.eat();   // lion eat.
 
-console.log(Object.keys(rabbit)); // [ 'name', 'eat' ]
+console.log();
+console.log(Object.keys(rabbit)); // [ 'name' ]
 
 for(let key in rabbit)
 	console.log(key);
 /*
 name
-eat
-*/
-
-console.log(Object.keys(lion)); // [ 'name', 'eat' ]
-
-for(let key in lion)
-	console.log(key);
-/*
-name
-eat
 weight
+eat
 */
 
-for(let key in lion) {
+for(let key in rabbit) {
 	let isOwn = lion.hasOwnProperty(key);
 	
 	if(isOwn) console.log(`child property: ${key}`);

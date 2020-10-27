@@ -1,7 +1,7 @@
 let user = {
-	name: 'madonna',
+	userName: 'madonna',
 	greet() {
-		console.log(`I am ${this.name}.`);
+		console.log(`I am ${this.userName}.`);
 	}
 };
 
