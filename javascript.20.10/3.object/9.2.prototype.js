@@ -39,6 +39,7 @@ let duck2 = new duck.constructor('duck2');
 console.log(duck2.constructor); // [Function: Duck]
 console.log();
 
+
 /** Object.prototype **/
 let obj = {};
 console.log(obj); // {}
