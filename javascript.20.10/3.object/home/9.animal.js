@@ -1,14 +1,15 @@
 /* 과제8:
 다음 상속 관계로 객체들을 디자인 하세요.
+<life>
 name
 eat()
 excrete()
 
-animal
+<animal>
 name
 move()
 
-bird           mammal
+<bird>        <mammal>
 name           name
 move()         move()
 --
