@@ -90,7 +90,7 @@ eat
 */
 
 for(let key in rabbit) {
-	let isOwn = lion.hasOwnProperty(key);
+	let isOwn = rabbit.hasOwnProperty(key);
 	
 	if(isOwn) console.log(`child property: ${key}`);
 	else console.log(`parent property: ${key}`);
