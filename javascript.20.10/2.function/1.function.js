@@ -82,9 +82,14 @@ showMsg('trinity'); // trinity: no message.
 
 
 /** NFE: Named Function Expression **/
-let tellHi = function fn(who) {
+let tellHi = function(who) {
 	if(who) console.log(`Hi, ${who}.`);
-	else fn('Guest');
+	else console.log('Hi, guest');
+};
+
+tellHi = function fn(who) {
+	if(who) console.log(`Hi, ${who}.`);
+	else fn('guest');
 };
 
 tellHi();       // Hi, Guest.
