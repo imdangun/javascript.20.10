@@ -1,5 +1,5 @@
 /* 과제2:
-과제1 을 callback 형태로 refactoring 하세요.
+과제 1.calculate.js를, callback 으로 refactoring 한다.
 */
 function minus(a, b) {
 	return a - b;

@@ -6,6 +6,12 @@ setTimeout(() => {
 	console.log('stop');
 }, 3000);
 
+/*
+tick
+tick
+stop.
+*/
+
 console.log(new Date());
 
 /*

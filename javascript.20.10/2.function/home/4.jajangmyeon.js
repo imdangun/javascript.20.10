@@ -1,5 +1,6 @@
-/* 과제4:
-2.callback.js 의 짜장면 이야기를 arrow function 으로 refactoring 하세요.
+/*
+과제3:
+2.callback.js 의 짜장면 이야기를, => function 으로 refactoring 한다.
 */
 let shef1 = (food) => `sweet ${food}`;
 
