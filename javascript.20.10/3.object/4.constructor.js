@@ -35,29 +35,34 @@ user2.greet(); // I am sarah.
 
 //
 let str = String(1);
+console.log(str); // 1
 console.log(typeof str); // string
 
 str = new String(1);
+console.log(str); // [String: '1']
 console.log(typeof str); // object
 
 //
 let human = new function() {
-	this.humanName = 'meg';
+	this.name = 'meg';
 	this.age = 27;
 };
 
+console.log(human); // { name: 'meg', age: 27 }
+
+
 //
 function BigUser() {
-	this.userName = 'amy';
-	return {userName: 'beth'};
+	this.name = 'amy';
+	return {name: 'beth'};
 }
 
 function SmallUser() {
-	this.userName = 'lorie';
+	this.name = 'lorie';
 }
 
-console.log(new BigUser());   // { userName: 'beth' }
-console.log(new SmallUser()); // SmallUser { userName: 'lorie' }
+console.log(new BigUser()); // { name: 'beth' }
+console.log(new SmallUser()); // SmallUser { name: 'lorie' }
 
 //
 console.log(SmallUser);     // [Function: SmallUser]
@@ -67,11 +72,12 @@ console.log(BigUser());     { userName: 'beth' }
 
 /** Object() **/
 const user = new Object();
+console.log(user); // {}
 
-user.userName = 'chris';
+user.name = 'chris';
 user['age'] = 38;
 user.greet = function() {
-	console.log(`I am ${this.userName}.`); // I am chris.
+	console.log(`I am ${this.name}.`); // I am chris.
 };
 
 console.log(user); // { userName: 'chris', age: 38, greet: [Function] }
@@ -85,4 +91,5 @@ console.log(person.userName); // chris
 console.log(person == user);  // false
 
 person.height = 200;
+console.log(person.height); // 200
 console.log(Object.keys(person)); // [ 'height' ]
