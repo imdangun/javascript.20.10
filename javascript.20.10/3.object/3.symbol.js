@@ -7,6 +7,7 @@ let id2 = Symbol('id');
 console.log(id1 == id2);      // false
 
 console.log(id1);             // Symbol(id)
+console.log(id2);             // Symbol(id)
 console.log(id1.toString());  // Symbol(id)
 
 console.log(typeof id1);            // symbol
@@ -62,3 +63,4 @@ console.log(Symbol.keyFor(globalSymbol)); // catName
 console.log(Symbol.keyFor(localSymbol));  // undefined
 
 console.log(localSymbol.description); // catName
+console.log(globalSymbol.description); // catName
