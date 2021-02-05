@@ -50,17 +50,26 @@ user.greet(); // hello
 
 /** optional chaining **/
 //?. 앞의 평가 대상이 null 이나 undefined 이면 undefined 를 return 한다.
-let user = {};
+user = {};
 let address = {};
 
 user.address = address;
-address.street = 'sejongro';
+address.street = 'sejong';
 
-let msg = user?.address?.street;
-console.log(msg); // sejongro
+let msg = user.address.street;
+console.log(msg); // sejong
 
-user.address = null;
-console.log(user?.address?.street); // undefined
+
+msg = user?.address?.street;
+console.log(msg); // sejong
+
+console.log();
+
+msg = user?.hello?.world;
+console.log(msg); // undefined
+
+msg = user.hello.world; // TypeError: Cannot read property 'world' of undefined
+console.log(msg);
 
 //?. 는 = 왼쪽에 사용할 수 없다.
 //user1?.userName = 'violet'; // SyntaxError: Invalid left-hand side in assignment
@@ -100,5 +109,6 @@ let key = 'userName';
 console.log(user1?.[key]); // viloet
 console.log(user2?.[key]); // undefined
 
-delete user1?.userName;
-console.log(user1); // {}
+// delete 엔 ?. 이 효과 없다.
+//delete user3.age; // ReferenceError: user3 is not defined
+//delete user3?.age; // ReferenceError: user3 is not defined
