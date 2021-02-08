@@ -1,14 +1,14 @@
 let user1 = {
-	userName: 'isabel',
+	name: 'isabel',
 	greet() {
-		console.log(`I am ${this.userName}.`);
+		console.log(`I am ${this.name}.`);
 	}
 };
 
 let user2 = {
-	userName: 'jade',
+	name : 'jade',
 	greet() {
-		console.log(`I am ${this.userName}.`);
+		console.log(`I am ${this.name}.`);
 	}
 };
 
@@ -17,32 +17,34 @@ user2.greet(); // I am jade.
 
 
 //
-let userName = 'morpheus';
+let name = 'morpheus';
 
 function greet() {
-	console.log(`I am ${this.userName}.`);
+	console.log(`I am ${this.name}.`);
 }
 
-user1 = {userName: 'neo'};
-user2 = {userName: 'trinity'};
+user1 = {name : 'neo'};
+user2 = {name : 'trinity'};
 
 greet(); // I am undefined.
+
 greet.call(user1); // I am neo.
 greet.call(user2); // I am trinity.
 
 
 //
 user1 = {
-	userName: 'rebecca',
+	name : 'rebecca',
 	greet() {
-		console.log(`I am ${this.userName}.`);
+		console.log(`I am ${this.name}.`);
 	}
 };
 
 user2 = {
-	userName: 'colin'
+	name : 'colin'
 };
 
 user1.greet(); // I am rebecca.
 // user2.greet(); // TypeError: user2.greet is not a function
+
 user1.greet.call(user2); // I am colin.

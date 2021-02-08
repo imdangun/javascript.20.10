@@ -1,13 +1,13 @@
 let user = {
-	userName: 'madonna',
+	name : 'madonna',
 	greet() {
-		console.log(`I am ${this.userName}.`);
+		console.log(`I am ${this.name}.`);
 	}
 };
 
 user.greet(); // I am madonna.
 
-// user 가 아닌 greet 함수를 등록했다.
+// user가 아닌 greet function 을 queue에 등록했다.
 setTimeout(user.greet, 100); // I am undefined.
 
 let fn = user.greet;
