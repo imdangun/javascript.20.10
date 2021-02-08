@@ -18,7 +18,7 @@ console.log(id1.description); // id
 
 /** hidden property **/
 let user = {
-	userName: 'neo'
+	name: 'neo'
 };
 
 let userId = Symbol('userId');
@@ -28,7 +28,7 @@ console.log(user.userId);  // undefined
 console.log(user[userId]); // 1
 
 user = {
-	userName: 'morpheus',
+	name: 'morpheus',
 	age: 52,
 	[userId]:2
 }
@@ -41,11 +41,11 @@ console.log(user[userId]); // 2
 for(let key in user)
 	console.log(key);
 /*
-userName
+name
 age
 */
 
-console.log(Object.keys(user)); // [ 'userName', 'age' ]
+console.log(Object.keys(user)); // [ 'name', 'age' ]
 
 
 /** global symbol registry **/

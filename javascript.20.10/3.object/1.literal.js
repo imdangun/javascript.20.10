@@ -3,12 +3,12 @@
 
 //key: string, symbol, value: any type
 let user = {
-	userName: 'frances',
+	name: 'frances',
 	age : 70
 }
 
 user = {
-	userName : {
+	name : {
 		first: 'bob',
 		last: 'smith'
 	},	
@@ -22,19 +22,19 @@ user = {
 
 
 /** read property **/
-console.log(user.userName);
-console.log(user.userName.first); // chaining
+console.log(user.name);
+console.log(user.name.first); // chaining
 user.sing();
 
 //console.log(user.'nick name'); // SyntaxError: Unexpected string
 console.log(user['nick name']);  // tiger face
-console.log(user['userName']['first']); // bob
+console.log(user['name']['first']); // bob
 
 
 /** write property **/
-user.userName.first = 'john';
+user.name.first = 'john';
 user['age'] = 50;
-console.log(user.userName.first, user.age); // john 50
+console.log(user.name.first, user.age); // john 50
 
 
 /** [] **/
