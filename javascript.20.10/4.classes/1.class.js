@@ -2,7 +2,7 @@ class User {
 	age = 10;
 	
 	constructor(name) {
-		this.name = name;
+		this._name = name;
 	}
 	
 	get name() {

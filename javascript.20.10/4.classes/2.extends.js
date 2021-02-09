@@ -62,7 +62,7 @@ rabbit이 숨다.
 /* super() */
 Rabbit = class extends Animal {
 	constructor(name, earLength) {
-		super(name);
+		super(name); // super 생성자 호출문은 자식 생정자 첫줄에 와야 한다.
 		this.earLength = earLength;
 	}
 }

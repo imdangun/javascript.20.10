@@ -18,10 +18,10 @@ function Waiter() {
 }
 
 chef1 = new Chef('sweet');
-chef2 = new Chef('host');
+chef2 = new Chef('hot');
 
 waiter = new Waiter();
 
 console.log(waiter.order('jajangmyeon', chef1)); // Food { taste: 'sweet', name: 'jajangmyeon' }
-waiter.order('jajangmyeon', chef2);
+console.log(waiter.order('jajangmyeon', chef2)); // Food { taste: 'hot', name: 'jajangmyeon' }
 waiter.order('champon', chef2);
