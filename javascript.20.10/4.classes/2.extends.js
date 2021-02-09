@@ -1,45 +1,45 @@
-class Animal {	
-	constructor(animalName) {
-		this.animalName = animalName;
-		this.speed = 0;
+class Animal {
+	constructor(name) {
+		this.name = name;		
 	}
 	
 	run(speed) {
 		this.speed = speed;
-		console.log(`${this.animalName} runs at ${this.speed} m/s.`);
+		console.log(`${this.name}이 ${this.speed}m/s로 달린다.`);
 	}
 	
 	stop() {
 		this.speed = 0;
-		console.log(`${this.animalName} stopped.`);
+		console.log(`${this.name}이 멈췄다.`);
 	}
 }
 
 let animal = new Animal('animal');
-animal.run(10); // animal runs at 10 m/s.
-animal.stop();   // animal stopped.
+animal.run(10); // animal이 10m/s로 달린다.
+animal.stop();  // animal이 멈췄다.
 
 
-/** method overriding **/
+/* extends */
 class Duck extends Animal {
 	run(speed) {
 		this.speed = speed / 10;
-		console.log(`${this.animalName} walks at ${this.speed} m/s.`);
+		console.log(`${this.name}이 ${this.speed}m/s 로 뒤뚱뒤뚱 걷는다.`);
 	}
 	
 	hide() {
-		console.log(`${this.animalName} hides.`);
+		console.log(`${this.name}이 숨다.`);
 	}
 }
 
 console.log();
 let duck = new Duck('duck');
-duck.run(10); // duck walks at 1 m/s.
-duck.stop();  // duck stopped.
-duck.hide();  // duck hides.
+
+duck.run(10); // duck이 1m/s 로 뒤뚱뒤뚱 걷는다.
+duck.stop();  // duck이 멈췄다.
+duck.hide();  // duck이 숨다.
 
 
-/** super **/
+/* super. */
 class Rabbit extends Animal {
 	stop() {
 		super.stop();
@@ -47,24 +47,27 @@ class Rabbit extends Animal {
 	}
 	
 	hide() {
-		console.log(`${this.animalName} hides.`);
+		console.log(`${this.name}이 숨다.`);
 	}
 }
 
 console.log();
-new Rabbit('rabbit').stop(); // rabbit stopped. rabbit hides.
+new Rabbit('rabbit').stop();
+/*
+rabbit이 멈췄다.
+rabbit이 숨다.
+*/
 
 
-/** constructor overriding **/
+/* super() */
 Rabbit = class extends Animal {
-	earLength;
-	
-	constructor(animalName, earLength) {
-		super(animalName);
+	constructor(name, earLength) {
+		super(name);
 		this.earLength = earLength;
 	}
 }
 
 let rabbit = new Rabbit('rabbit', 10);
-console.log(rabbit.animalName); // rabbit
-console.log(rabbit.earLength);  // 10
+
+console.log(rabbit.name); // rabbit
+console.log(rabbit.earLength); // 10
