@@ -22,13 +22,15 @@ class User {
 let user = new User('john');
 
 console.log(user.name); // john
-
 user.name = 'neo'; // ERROR] 이름은 4글자 이상이어야 합니다.
 
-user.sayMe(); // john, 10
+user.age = 100;
+console.log(user.age); // 100
+
+user.sayMe(); // john, 100
+
 
 console.log(typeof User); // function
-
 console.log(User); // [class User]
 
 
