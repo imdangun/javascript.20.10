@@ -9,11 +9,7 @@ function Food(taste, name) {
 	this.name = name;
 }
 
-Food.prototype.toString = function() {
-	return `${this.taste} ${this.name}`;
-}; 
-
-function Shef(taste) {
+function Chef(taste) {
 	this.cook = foodName => new Food(taste, foodName);	
 }
 
@@ -21,11 +17,11 @@ function Waiter() {
 	this.order = (foodName, shef) => shef.cook(foodName);
 }
 
-shef1 = new Shef('sweet');
-shef2 = new Shef('hot');
+shef1 = new Chef('sweet');
+shef2 = new Chef('hot');
 
 waiter = new Waiter();
 
-console.log(waiter.order('jajangmyeon', shef1) + ''); // sweet jajangmyeon
-console.log(waiter.order('jajangmyeon', shef2) + ''); // hot jajangmyeon
-console.log(waiter.order('champon', shef2) + '');     // hot champon
+console.log(waiter.order('jajangmyeon', shef1)); // Food { taste: 'sweet', name: 'jajangmyeon' }
+console.log(waiter.order('jajangmyeon', shef2)); // Food { taste: 'hot', name: 'jajangmyeon' }
+console.log(waiter.order('champon', shef2));     // Food { taste: 'hot', name: 'champon' }
