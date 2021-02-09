@@ -1,48 +1,46 @@
-/** basic syntax **/
 class User {
-	userName;
+	age = 10;
 	
-	constructor(userName) {
-		this.userName = userName;
+	constructor(name) {
+		this.name = name;
 	}
 	
-	getUserName() {
-		return this.userName;
+	get name() {
+		return this._name;
 	}
 	
-	setUserName(userName) {
-		if(userName.length < 4) {
-			console.log('userName is too short.');
-		} else {
-			this.userName = userName;			
-		}
+	set name(name) {
+		if(name.length >= 4) this._name = name;
+		else console.log('ERROR] 이름은 4글자 이상이어야 합니다.');
 	}
 	
-	sayHi() {
-		console.log('Hi, I am ' + this.userName);
+	sayMe() {
+		console.log(`${this.name}, ${this.age}`);
 	}
 }
 
 let user = new User('john');
-console.log(user.getUserName()); // john
 
-user.setUserName('neo'); // userName is too short.
+console.log(user.name); // john
 
-user.sayHi(); // Hi, I am john
+user.name = 'neo'; // ERROR] 이름은 4글자 이상이어야 합니다.
+
+user.sayMe(); // john, 10
 
 console.log(typeof User); // function
 
-console.log(User); // [Function: User]
+console.log(User); // [class User]
 
 
-/** class expression **/
+/* class expression */
 User = class {
 	sayHi() {
-		console.log('hi');
+		console.log('Hi.');
 	}
-}
+};
 
-new User().sayHi(); // hi
+new User().sayHi(); // Hi.
+
 
 //
 User = class MyClass {
@@ -51,9 +49,11 @@ User = class MyClass {
 	}
 };
 
-new User().sayHi(); // [Function: MyClass]
+new User().sayHi(); // [class MyClass]
 
-//console.log(MyClass); // ReferenceError: MyClass is not defined
+console.log(User); // [class MyClass]
+// console.log(MyClass); // ReferenceError: MyClass is not defined
+
 
 //
 function makeClass(phrase) {
@@ -65,4 +65,5 @@ function makeClass(phrase) {
 }
 
 User = makeClass('hello');
+
 new User().sayHi(); // hello
