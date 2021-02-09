@@ -4,24 +4,24 @@
 - 각 객체들은 생성자로 디자인한다.
 */
 
-function Food(taste, name) {
+function Food(taste, name) {		
 	this.taste = taste;
 	this.name = name;
 }
 
 function Chef(taste) {
-	this.cook = foodName => new Food(taste, foodName);	
+	this.cook = foodName => new Food(taste, foodName);
 }
 
 function Waiter() {
 	this.order = (foodName, shef) => shef.cook(foodName);
 }
 
-shef1 = new Chef('sweet');
-shef2 = new Chef('hot');
+chef1 = new Chef('sweet');
+chef2 = new Chef('host');
 
 waiter = new Waiter();
 
-console.log(waiter.order('jajangmyeon', shef1)); // Food { taste: 'sweet', name: 'jajangmyeon' }
-console.log(waiter.order('jajangmyeon', shef2)); // Food { taste: 'hot', name: 'jajangmyeon' }
-console.log(waiter.order('champon', shef2));     // Food { taste: 'hot', name: 'champon' }
+console.log(waiter.order('jajangmyeon', chef1)); // Food { taste: 'sweet', name: 'jajangmyeon' }
+waiter.order('jajangmyeon', chef2);
+waiter.order('champon', chef2);
