@@ -33,10 +33,10 @@ console.log(Article.getPrice()); // 2000
 
 
 //
-let article1 = new Article('java', new Date(2025, 1, 1));
-let article2 = new Article('javascript', new Date(2025, 1, 2));
+let article1 = new Article('java', new Date('2025-1-1'));
+let article2 = new Article('javascript', new Date('2025-1-2'));
 
-console.log(Article.compare(article1, article2));
+console.log(Article.compare(article1, article2)); // -86400000
 
 
 //
@@ -71,8 +71,8 @@ class Advertising extends Article {
 	
 }
 
-let ad1 = new Advertising('cloth', new Date(2025, 5, 1));
-let ad2 = new Advertising('shoes', new Date(2025, 5, 2));
+let ad1 = new Advertising('cloth', new Date('2025-5-1'));
+let ad2 = new Advertising('shoes', new Date('2025-5-2'));
 
 console.log(Advertising.publisher); // ddanzi
 
